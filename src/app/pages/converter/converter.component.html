@@ -1,0 +1,31 @@
+<div class="converter">
+  <div class="converter__fields-block">
+    <div class="converter__field-item">
+      <p-dropdown
+        [options]="currencies"
+        [(ngModel)]="selectedInputCurrency"
+        [placeholder]="'Please select currency'"
+        optionLabel="title"
+        (onChange)="changeSelectedCurrency($event.value.title, $event.value.value, 'input')">
+      </p-dropdown>
+      <input type="number"
+             [placeholder]="'Amount'"
+             [(ngModel)]="inputAmount"
+             (ngModelChange)="convertCurrency('input')">
+    </div>
+
+    <div class="converter__field-item">
+      <p-dropdown
+        [options]="currencies"
+        [(ngModel)]="selectedOutputCurrency"
+        [placeholder]="'Please select currency'"
+        optionLabel="title"
+        (onChange)="changeSelectedCurrency($event.value.title, $event.value.value, 'output')">
+      </p-dropdown>
+      <input type="number"
+             [placeholder]="'Amount'"
+             [(ngModel)]="outputAmount"
+             (ngModelChange)="convertCurrency('output')">
+    </div>
+  </div>
+</div>

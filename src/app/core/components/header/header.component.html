@@ -1,0 +1,8 @@
+<div class="header">
+    <h1 class="header__title">Currency converter</h1>
+    <div class="header__currencies">
+        <p *ngFor="let currency of currencies">
+          {{currency.base + ': ' + (currency.rates.UAH | number)}}
+        </p>
+    </div>
+</div>
